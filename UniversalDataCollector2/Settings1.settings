@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="UniversalDataCollector" GeneratedClassName="Settings1">
+  <Profiles />
+  <Settings>
+    <Setting Name="SensorConfigFilename" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SensorConfiguration.xml</Value>
+    </Setting>
+    <Setting Name="ExportFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ForExport</Value>
+    </Setting>
+    <Setting Name="GeneralConfigFilename" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GeneralConfiguration.xml</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
