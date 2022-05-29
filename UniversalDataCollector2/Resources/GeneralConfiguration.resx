@@ -135,12 +135,12 @@ hostname -I
 You should get an identifier of the form 172.16.254.1</value>
   </data>
   <data name="RaspberryPasswordHelp" xml:space="preserve">
-    <value>This is the Raspberry password.</value>
+    <value>Enter the Raspberry password.</value>
   </data>
   <data name="RaspberryPortHelp" xml:space="preserve">
-    <value>This is the Raspberry port.</value>
+    <value>Enter the Raspberry port.</value>
   </data>
   <data name="RaspberryUserHelp" xml:space="preserve">
-    <value>This is the Raspberry user.</value>
+    <value>Enter the Raspberry user.</value>
   </data>
 </root>

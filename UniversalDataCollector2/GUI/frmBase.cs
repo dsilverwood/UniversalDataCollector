@@ -63,8 +63,13 @@ namespace UniversalDataCollector.GUI
         {
             ToolStripMenuItem menuItem = null;
 
-            if (e.Result.Confidence < 0.93)
-                return;
+            //if (String.Equals(e.Result.Text.ToLower() , "ok"))
+            //{
+            //    if (e.Result.Confidence < 0.60)
+            //        return;
+            //}
+            //else if (e.Result.Confidence < 0.80)
+            //    return;
             Button button = (Button)allButtons.FirstOrDefault(x => x.Text.ToLower().Contains(e.Result.Text.ToLower()));
             if (button != null)
                 button.PerformClick();
@@ -78,7 +83,7 @@ namespace UniversalDataCollector.GUI
             GrammarBuilder builder = new GrammarBuilder(question);
             builder.Append(choices);
             Grammar sensorGrammar = new Grammar(builder);
-            sensorGrammar.Name = "PickSensor";
+            sensorGrammar.Name = "Choices";
             return sensorGrammar;
         }
 
@@ -108,6 +113,7 @@ namespace UniversalDataCollector.GUI
                 buttonChoices.Add(button.Text);
             GrammarBuilder buttonBuilder = new GrammarBuilder(buttonChoices);
             Grammar buttonGrammar = new Grammar(buttonBuilder);
+            buttonGrammar.Name = "Buttons";
             return buttonGrammar;
         }
 

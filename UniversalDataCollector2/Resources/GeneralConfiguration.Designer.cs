@@ -90,7 +90,7 @@ namespace UniversalDataCollector.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is the Raspberry password..
+        ///   Looks up a localized string similar to Enter the Raspberry password..
         /// </summary>
         public static string RaspberryPasswordHelp {
             get {
@@ -99,7 +99,7 @@ namespace UniversalDataCollector.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is the Raspberry port..
+        ///   Looks up a localized string similar to Enter the Raspberry port..
         /// </summary>
         public static string RaspberryPortHelp {
             get {
@@ -108,7 +108,7 @@ namespace UniversalDataCollector.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is the Raspberry user..
+        ///   Looks up a localized string similar to Enter the Raspberry user..
         /// </summary>
         public static string RaspberryUserHelp {
             get {
