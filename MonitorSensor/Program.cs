@@ -60,7 +60,7 @@ namespace MonitorSensor
             return (config.RaspberryUser + '@' + config.RaspberryIP + " -pw " + config.RaspberryPassword);
         }
 
-        public void SendDataToGUI(string message, string sensor)
+        public void QueueReading(string message, string sensor)
         {
             myRaspberry.inboundQueue.Send(message, sensor);
         }
@@ -89,7 +89,7 @@ namespace MonitorSensor
                 if (!string.IsNullOrEmpty(reading))
                 {
                     if (dataStartDetected)
-                        monitorSensor.SendDataToGUI(reading, sensorName);
+                        monitorSensor.QueueReading(reading, sensorName);
                     else
                         dataStartDetected = reading.Contains("start data");
                 }
