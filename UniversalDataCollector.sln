@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorSensor", "MonitorSen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorDataDisplayer", "DisplaySensorData\SensorDataDisplayer.csproj", "{FA5611EA-FA89-43D5-BC6D-BD971F18E46C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{F13DA58B-DA25-408D-944A-CA11082D48A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{F13DA58B-DA25-408D-944A-CA11082D48A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0FF3318C-F6B0-4A22-BE37-AB74C9429EFD}"
+	ProjectSection(SolutionItems) = preProject
+		..\Users\Admin\Desktop\designdecisions.md = ..\Users\Admin\Desktop\designdecisions.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
