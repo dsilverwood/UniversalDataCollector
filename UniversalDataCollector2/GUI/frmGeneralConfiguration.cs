@@ -166,7 +166,7 @@ namespace UniversalDataCollector
             // TODO: Here, when successfully connected, it would be nice to show the Raspberry model number
             Cursor.Current = Cursors.WaitCursor;
             frmShowMessage messageToUser = new frmShowMessage();
-            if (!Program.myRaspberry.Ping(txtBoxRaspberryIP.Text))
+            if (!Network.Ping(txtBoxRaspberryIP.Text))
             {
                 Cursor.Current = Cursors.Default;
                 messageToUser.Message = String.Join(
@@ -188,7 +188,7 @@ namespace UniversalDataCollector
         {
             string output = "";
             Cursor.Current = Cursors.WaitCursor;
-            if(Program.myRaspberry.Ping(txtBoxRaspberryIP.Text))
+            if(Network.Ping(txtBoxRaspberryIP.Text))
                 output = Program.myRaspberry.ExecuteBashCommand("pinout", ".xyz");
             Cursor.Current = Cursors.Default;
             frmShowMessage detectResult = new frmShowMessage();

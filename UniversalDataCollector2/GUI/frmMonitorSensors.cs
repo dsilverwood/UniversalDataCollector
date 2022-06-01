@@ -137,6 +137,8 @@ namespace UniversalDataCollector
 
         private void uploadToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!Program.myRaspberry.Ping())
+                return;
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;

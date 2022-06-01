@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGeneralConfiguration));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblBoard = new System.Windows.Forms.Label();
-            this.cmbBoxBoard = new System.Windows.Forms.ComboBox();
             this.dataSetConfiguration = new System.Data.DataSet();
             this.dataTableConfiguration = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -41,6 +38,9 @@
             this.dataColumn5 = new System.Data.DataColumn();
             this.dataColumn6 = new System.Data.DataColumn();
             this.dataColumn7 = new System.Data.DataColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblBoard = new System.Windows.Forms.Label();
+            this.cmbBoxBoard = new System.Windows.Forms.ComboBox();
             this.lblLocalComputerIP = new System.Windows.Forms.Label();
             this.txtBoxLocalIP = new System.Windows.Forms.TextBox();
             this.lblRaspberryIP = new System.Windows.Forms.Label();
@@ -61,14 +61,67 @@
             this.pctBoxHelpRaspberryUser = new System.Windows.Forms.PictureBox();
             this.btnDetectBoard = new System.Windows.Forms.Button();
             this.pctBoxHelpPort = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetConfiguration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableConfiguration)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxHelpComputerIP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxHelpRaspberryIP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxHelpRaspberryUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxHelpPort)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataSetConfiguration
+            // 
+            this.dataSetConfiguration.DataSetName = "NewDataSet";
+            this.dataSetConfiguration.Tables.AddRange(new System.Data.DataTable[] {
+            this.dataTableConfiguration});
+            // 
+            // dataTableConfiguration
+            // 
+            this.dataTableConfiguration.Columns.AddRange(new System.Data.DataColumn[] {
+            this.dataColumn1,
+            this.dataColumn2,
+            this.dataColumn3,
+            this.dataColumn4,
+            this.dataColumn5,
+            this.dataColumn6,
+            this.dataColumn7});
+            this.dataTableConfiguration.TableName = "dataTableConfiguration";
+            // 
+            // dataColumn1
+            // 
+            this.dataColumn1.ColumnName = "Board";
+            this.dataColumn1.DefaultValue = "Pi 3B";
+            // 
+            // dataColumn2
+            // 
+            this.dataColumn2.ColumnName = "LocalIP";
+            this.dataColumn2.DefaultValue = "10.0.0.0";
+            // 
+            // dataColumn3
+            // 
+            this.dataColumn3.ColumnName = "RaspberryIP";
+            this.dataColumn3.DefaultValue = "10.0.0.0";
+            // 
+            // dataColumn4
+            // 
+            this.dataColumn4.ColumnName = "RaspberryWorkingFolder";
+            this.dataColumn4.DefaultValue = "/home/pi/Documents/PlainGPIO/bin/Debug/PlainGPIO";
+            // 
+            // dataColumn5
+            // 
+            this.dataColumn5.ColumnName = "Port";
+            this.dataColumn5.DefaultValue = "22";
+            // 
+            // dataColumn6
+            // 
+            this.dataColumn6.ColumnName = "RaspberryUser";
+            this.dataColumn6.DefaultValue = "pi";
+            // 
+            // dataColumn7
+            // 
+            this.dataColumn7.ColumnName = "RaspberryPassword";
+            this.dataColumn7.DefaultValue = "raspberry";
             // 
             // tableLayoutPanel1
             // 
@@ -78,7 +131,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.05263F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
             this.tableLayoutPanel1.Controls.Add(this.lblBoard, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.cmbBoxBoard, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblLocalComputerIP, 0, 0);
@@ -135,65 +188,12 @@
             this.cmbBoxBoard.DisplayMember = "dataTableConfiguration.Board";
             this.cmbBoxBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBoxBoard.FormattingEnabled = true;
-            this.cmbBoxBoard.Location = new System.Drawing.Point(194, 85);
+            this.cmbBoxBoard.Location = new System.Drawing.Point(193, 85);
             this.cmbBoxBoard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbBoxBoard.Name = "cmbBoxBoard";
             this.cmbBoxBoard.Size = new System.Drawing.Size(232, 34);
             this.cmbBoxBoard.TabIndex = 2;
             this.cmbBoxBoard.ValueMember = "dataTableConfiguration.Board";
-            // 
-            // dataSetConfiguration
-            // 
-            this.dataSetConfiguration.DataSetName = "NewDataSet";
-            this.dataSetConfiguration.Tables.AddRange(new System.Data.DataTable[] {
-            this.dataTableConfiguration});
-            // 
-            // dataTableConfiguration
-            // 
-            this.dataTableConfiguration.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dataColumn1,
-            this.dataColumn2,
-            this.dataColumn3,
-            this.dataColumn4,
-            this.dataColumn5,
-            this.dataColumn6,
-            this.dataColumn7});
-            this.dataTableConfiguration.TableName = "dataTableConfiguration";
-            // 
-            // dataColumn1
-            // 
-            this.dataColumn1.ColumnName = "Board";
-            this.dataColumn1.DefaultValue = "Pi 3B";
-            // 
-            // dataColumn2
-            // 
-            this.dataColumn2.ColumnName = "LocalIP";
-            this.dataColumn2.DefaultValue = "10.0.0.0";
-            // 
-            // dataColumn3
-            // 
-            this.dataColumn3.ColumnName = "RaspberryIP";
-            this.dataColumn3.DefaultValue = "10.0.0.0";
-            // 
-            // dataColumn4
-            // 
-            this.dataColumn4.ColumnName = "RaspberryWorkingFolder";
-            this.dataColumn4.DefaultValue = "/home/pi/Documents/PlainGPIO/bin/Debug/PlainGPIO";
-            // 
-            // dataColumn5
-            // 
-            this.dataColumn5.ColumnName = "Port";
-            this.dataColumn5.DefaultValue = "22";
-            // 
-            // dataColumn6
-            // 
-            this.dataColumn6.ColumnName = "RaspberryUser";
-            this.dataColumn6.DefaultValue = "pi";
-            // 
-            // dataColumn7
-            // 
-            this.dataColumn7.ColumnName = "RaspberryPassword";
-            this.dataColumn7.DefaultValue = "raspberry";
             // 
             // lblLocalComputerIP
             // 
@@ -212,7 +212,7 @@
             this.txtBoxLocalIP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxLocalIP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSetConfiguration, "dataTableConfiguration.LocalIP", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtBoxLocalIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxLocalIP.Location = new System.Drawing.Point(194, 15);
+            this.txtBoxLocalIP.Location = new System.Drawing.Point(193, 15);
             this.txtBoxLocalIP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxLocalIP.Name = "txtBoxLocalIP";
             this.txtBoxLocalIP.Size = new System.Drawing.Size(232, 32);
@@ -235,7 +235,7 @@
             this.txtBoxRaspberryIP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxRaspberryIP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSetConfiguration, "dataTableConfiguration.RaspberryIP", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtBoxRaspberryIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxRaspberryIP.Location = new System.Drawing.Point(194, 162);
+            this.txtBoxRaspberryIP.Location = new System.Drawing.Point(193, 162);
             this.txtBoxRaspberryIP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxRaspberryIP.Name = "txtBoxRaspberryIP";
             this.txtBoxRaspberryIP.Size = new System.Drawing.Size(232, 32);
@@ -270,7 +270,7 @@
             this.txtBoxPort.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxPort.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSetConfiguration, "dataTableConfiguration.Port", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtBoxPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPort.Location = new System.Drawing.Point(194, 305);
+            this.txtBoxPort.Location = new System.Drawing.Point(193, 305);
             this.txtBoxPort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxPort.Name = "txtBoxPort";
             this.txtBoxPort.Size = new System.Drawing.Size(232, 32);
@@ -293,7 +293,7 @@
             this.txtBoxRaspberryUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxRaspberryUser.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSetConfiguration, "dataTableConfiguration.RaspberryUser", true));
             this.txtBoxRaspberryUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxRaspberryUser.Location = new System.Drawing.Point(194, 237);
+            this.txtBoxRaspberryUser.Location = new System.Drawing.Point(193, 237);
             this.txtBoxRaspberryUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxRaspberryUser.Name = "txtBoxRaspberryUser";
             this.txtBoxRaspberryUser.Size = new System.Drawing.Size(232, 32);
@@ -305,7 +305,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.txtBoxRaspberryFolder, 4);
             this.txtBoxRaspberryFolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSetConfiguration, "dataTableConfiguration.RaspberryWorkingFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtBoxRaspberryFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxRaspberryFolder.Location = new System.Drawing.Point(194, 365);
+            this.txtBoxRaspberryFolder.Location = new System.Drawing.Point(193, 365);
             this.txtBoxRaspberryFolder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxRaspberryFolder.Name = "txtBoxRaspberryFolder";
             this.txtBoxRaspberryFolder.Size = new System.Drawing.Size(764, 32);
@@ -315,7 +315,7 @@
             // 
             this.pctBoxHelpComputerIP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pctBoxHelpComputerIP.Image = ((System.Drawing.Image)(resources.GetObject("pctBoxHelpComputerIP.Image")));
-            this.pctBoxHelpComputerIP.Location = new System.Drawing.Point(436, 12);
+            this.pctBoxHelpComputerIP.Location = new System.Drawing.Point(434, 12);
             this.pctBoxHelpComputerIP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pctBoxHelpComputerIP.Name = "pctBoxHelpComputerIP";
             this.pctBoxHelpComputerIP.Size = new System.Drawing.Size(39, 38);
@@ -327,7 +327,7 @@
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(805, 418);
+            this.btnCancel.Location = new System.Drawing.Point(803, 418);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 69);
@@ -340,7 +340,7 @@
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(625, 418);
+            this.btnOK.Location = new System.Drawing.Point(623, 418);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(150, 69);
@@ -354,7 +354,7 @@
             this.txtBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataSetConfiguration, "dataTableConfiguration.RaspberryPassword", true));
             this.txtBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPassword.Location = new System.Drawing.Point(805, 237);
+            this.txtBoxPassword.Location = new System.Drawing.Point(803, 237);
             this.txtBoxPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.Size = new System.Drawing.Size(148, 32);
@@ -366,7 +366,7 @@
             this.lblRasberyPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRasberyPassword.AutoSize = true;
             this.lblRasberyPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRasberyPassword.Location = new System.Drawing.Point(625, 240);
+            this.lblRasberyPassword.Location = new System.Drawing.Point(623, 240);
             this.lblRasberyPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRasberyPassword.Name = "lblRasberyPassword";
             this.lblRasberyPassword.Size = new System.Drawing.Size(123, 26);
@@ -376,7 +376,7 @@
             // btnTestRaspberryIP
             // 
             this.btnTestRaspberryIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTestRaspberryIP.Location = new System.Drawing.Point(625, 146);
+            this.btnTestRaspberryIP.Location = new System.Drawing.Point(623, 146);
             this.btnTestRaspberryIP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTestRaspberryIP.Name = "btnTestRaspberryIP";
             this.btnTestRaspberryIP.Size = new System.Drawing.Size(150, 64);
@@ -389,7 +389,7 @@
             // 
             this.pctBoxHelpRaspberryIP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pctBoxHelpRaspberryIP.Image = ((System.Drawing.Image)(resources.GetObject("pctBoxHelpRaspberryIP.Image")));
-            this.pctBoxHelpRaspberryIP.Location = new System.Drawing.Point(436, 159);
+            this.pctBoxHelpRaspberryIP.Location = new System.Drawing.Point(434, 159);
             this.pctBoxHelpRaspberryIP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pctBoxHelpRaspberryIP.Name = "pctBoxHelpRaspberryIP";
             this.pctBoxHelpRaspberryIP.Size = new System.Drawing.Size(39, 38);
@@ -401,7 +401,7 @@
             // 
             this.pctBoxHelpRaspberryUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pctBoxHelpRaspberryUser.Image = ((System.Drawing.Image)(resources.GetObject("pctBoxHelpRaspberryUser.Image")));
-            this.pctBoxHelpRaspberryUser.Location = new System.Drawing.Point(436, 234);
+            this.pctBoxHelpRaspberryUser.Location = new System.Drawing.Point(434, 234);
             this.pctBoxHelpRaspberryUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pctBoxHelpRaspberryUser.Name = "pctBoxHelpRaspberryUser";
             this.pctBoxHelpRaspberryUser.Size = new System.Drawing.Size(39, 38);
@@ -412,7 +412,7 @@
             // btnDetectBoard
             // 
             this.btnDetectBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetectBoard.Location = new System.Drawing.Point(625, 68);
+            this.btnDetectBoard.Location = new System.Drawing.Point(623, 68);
             this.btnDetectBoard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDetectBoard.Name = "btnDetectBoard";
             this.btnDetectBoard.Size = new System.Drawing.Size(150, 68);
@@ -425,7 +425,7 @@
             // 
             this.pctBoxHelpPort.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pctBoxHelpPort.Image = ((System.Drawing.Image)(resources.GetObject("pctBoxHelpPort.Image")));
-            this.pctBoxHelpPort.Location = new System.Drawing.Point(436, 302);
+            this.pctBoxHelpPort.Location = new System.Drawing.Point(434, 302);
             this.pctBoxHelpPort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pctBoxHelpPort.Name = "pctBoxHelpPort";
             this.pctBoxHelpPort.Size = new System.Drawing.Size(39, 38);
@@ -443,16 +443,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmGeneralConfiguration";
-            this.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.Padding = new System.Windows.Forms.Padding(15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "General Configuration. For voice command, simply say \"What is\" followed by the la" +
     "bel name";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGeneralConfiguration_FormClosing);
             this.Load += new System.EventHandler(this.frmGeneralConfiguration_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetConfiguration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableConfiguration)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxHelpComputerIP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxHelpRaspberryIP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxHelpRaspberryUser)).EndInit();

@@ -80,28 +80,11 @@ namespace CommonLibrary
             return (boards);
         }
 
-        public bool Ping(string ip)
+        public bool Ping()
         {
             bool success = false;
-            Ping pinger = null;
-
-            try
-            {
-                pinger = new Ping();
-                PingReply reply = pinger.Send(ip);
-                success = reply.Status == IPStatus.Success;
-            }
-            catch (PingException)
-            {
-
-            }
-            finally
-            {
-                if (pinger != null)
-                {
-                    pinger.Dispose();
-                }
-            }
+            if (configDetail != null)
+                success = Network.Ping(configDetail.RaspberryIP);
             return success;
         }
 

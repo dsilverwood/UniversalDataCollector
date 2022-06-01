@@ -3,15 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.ServiceProcess;
+using System.Net.NetworkInformation;
 
 
 namespace CommonLibrary
 {
+    public static class Network
+
+    {
+        public static bool Ping(string ip)
+        {
+            bool success = false;
+            Ping pinger = null;
+
+            try
+            {
+                pinger = new Ping();
+                PingReply reply = pinger.Send(ip);
+                success = reply.Status == IPStatus.Success;
+            }
+            catch (PingException)
+            {
+
+            }
+            finally
+            {
+                if (pinger != null)
+                {
+                    pinger.Dispose();
+                }
+            }
+            return success;
+        }
+    }
+
     public static class ErrorLogging
     {
         public static void Add(string error)
         {
-
         }
     }
 
