@@ -186,8 +186,10 @@ namespace UniversalDataCollector
 
         private void btnDetectBoard_Click(object sender, EventArgs e)
         {
+            string output = "";
             Cursor.Current = Cursors.WaitCursor;
-            string output = Program.myRaspberry.ExecuteBashCommand("pinout", ".xyz");
+            if(Program.myRaspberry.Ping(txtBoxRaspberryIP.Text))
+                output = Program.myRaspberry.ExecuteBashCommand("pinout", ".xyz");
             Cursor.Current = Cursors.Default;
             frmShowMessage detectResult = new frmShowMessage();
             detectResult.Message = String.Join(
