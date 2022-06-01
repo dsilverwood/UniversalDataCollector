@@ -63,6 +63,11 @@ namespace CommonLibrary
         public void Initialize(string configFilename)
         {
             InitConfig(configFilename);
+            InitQueue();
+        }
+
+        private void InitQueue()
+        {
             if (!MessageQueue.Exists(@".\Private$\InboundQueue"))
                 inboundQueue = MessageQueue.Create(@".\Private$\InboundQueue");
             else
