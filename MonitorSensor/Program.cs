@@ -27,7 +27,6 @@ namespace MonitorSensor
             sensorInterface = interfac;
             start = SensorCommands.Start(sensor);
             stop = SensorCommands.Stop(sensor);
-            config = myRaspberry.DataCollectorConfig();
             StartRemoteSensor();
         }
 

@@ -58,11 +58,11 @@ namespace CommonLibrary
     public class Raspberry
     {
         public MessageQueue inboundQueue;
-        private string generalConfigFilename;
+        public GeneralConfigurationDetail configDetail;
 
         public void Initialize(string configFilename)
         {
-            generalConfigFilename = configFilename;
+            InitConfig(configFilename);
             if (!MessageQueue.Exists(@".\Private$\InboundQueue"))
                 inboundQueue = MessageQueue.Create(@".\Private$\InboundQueue");
             else
@@ -105,18 +105,18 @@ namespace CommonLibrary
             return success;
         }
 
-        public GeneralConfigurationDetail DataCollectorConfig()
+        private GeneralConfigurationDetail InitConfig(string configFilename)
         {
             DataRow row = null;
-            DataSet dataSetConfiguration = new DataSet();
-            GeneralConfigurationDetail config = null;
 
-            if (File.Exists(generalConfigFilename))
+            DataSet dataSetConfiguration = new DataSet();
+
+            if (File.Exists(configFilename))
             {
-                XmlReader xmlFile = XmlReader.Create(generalConfigFilename, new XmlReaderSettings());
+                XmlReader xmlFile = XmlReader.Create(configFilename, new XmlReaderSettings());
                 dataSetConfiguration.ReadXml(xmlFile, XmlReadMode.ReadSchema);
                 row = dataSetConfiguration.Tables[0].Rows[0];
-                config = new GeneralConfigurationDetail
+                configDetail = new GeneralConfigurationDetail
                 {
                     board = row.ItemArray[0] == DBNull.Value ? (string)dataSetConfiguration.Tables[0].Columns[0].DefaultValue : (string)row.ItemArray[0],
                     localIP = row.ItemArray[1] == DBNull.Value ? (string)dataSetConfiguration.Tables[0].Columns[1].DefaultValue : (string)row.ItemArray[1],
@@ -129,7 +129,7 @@ namespace CommonLibrary
 
                 xmlFile.Close();
             }
-            return config;
+            return configDetail;
         }
 
         public DataSet SensorConfig()
@@ -231,9 +231,8 @@ namespace CommonLibrary
         private string GetProcessArguments()
         {
             string processArguments = "";
-            GeneralConfigurationDetail config = DataCollectorConfig();
-            if (config != null)
-                processArguments = config.RaspberryUser + '@' + config.RaspberryIP + " -pw " + config.RaspberryPassword;
+            if (configDetail != null)
+                processArguments = configDetail.RaspberryUser + '@' + configDetail.RaspberryIP + " -pw " + configDetail.RaspberryPassword;
 
             return (processArguments);
         }

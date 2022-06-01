@@ -86,9 +86,8 @@ namespace SensorDataDisplayer
         private bool IsRaspberryReady()
         {
             bool isReady = false;
-            GeneralConfigurationDetail config = Program.myRaspberry.DataCollectorConfig();
-            if(config != null)
-                isReady = Program.myRaspberry.Ping(config.RaspberryIP);
+            if(Program.myRaspberry.configDetail != null)
+                isReady = Program.myRaspberry.Ping(Program.myRaspberry.configDetail.RaspberryIP);
             return isReady;
         }
 

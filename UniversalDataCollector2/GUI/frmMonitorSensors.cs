@@ -130,9 +130,8 @@ namespace UniversalDataCollector
         private string GetUploadArguments()
         {
             string arguments = "";
-            GeneralConfigurationDetail config = Program.myRaspberry.DataCollectorConfig();
-            if(config != null)
-                arguments = "-pw " + config.RaspberryPassword + " -P " + config.port + " SensorConfiguration.xml " + config.RaspberryUser + "@" + config.RaspberryIP + ":" + config.RaspberryWorkingFolder;
+            if(Program.myRaspberry.configDetail != null)
+                arguments = "-pw " + Program.myRaspberry.configDetail.RaspberryPassword + " -P " + Program.myRaspberry.configDetail.port + " SensorConfiguration.xml " + Program.myRaspberry.configDetail.RaspberryUser + "@" + Program.myRaspberry.configDetail.RaspberryIP + ":" + Program.myRaspberry.configDetail.RaspberryWorkingFolder;
             return arguments;
         }
 
